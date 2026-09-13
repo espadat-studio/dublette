@@ -1,4 +1,6 @@
-# Dublette
+---
+title: "Dublette"
+---
 
 Deduplicate images, videos, and audio using perceptual hashing and acoustic fingerprints.
 
@@ -36,4 +38,4 @@ dublette ~/Photos --dry-run --json
 
 ## Getting Started
 
-See [Installation](getting-started/installation.md) to install dublette, then follow the [Quick Start](getting-started/quick-start.md) guide.
+See [Installation](/getting-started/installation/) to install dublette, then follow the [Quick Start](/getting-started/quick-start/) guide.

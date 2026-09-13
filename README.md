@@ -45,10 +45,10 @@ dublette ~/Photos --yes
 
 Full documentation available at [dublette.espadat.com](https://dublette.espadat.com):
 
-- [Installation](https://dublette.espadat.com/#/getting-started/installation) - Detailed setup guide
-- [Quick Start](https://dublette.espadat.com/#/getting-started/quick-start) - Step-by-step walkthrough
-- [CLI Reference](https://dublette.espadat.com/#/cli-reference) - All options documented
-- [How It Works](https://dublette.espadat.com/#/how-it-works/perceptual-hashing) - Perceptual hashing explained
+- [Installation](https://dublette.espadat.com/getting-started/installation/) - Detailed setup guide
+- [Quick Start](https://dublette.espadat.com/getting-started/quick-start/) - Step-by-step walkthrough
+- [CLI Reference](https://dublette.espadat.com/cli-reference/) - All options documented
+- [How It Works](https://dublette.espadat.com/how-it-works/perceptual-hashing/) - Perceptual hashing explained
 
 ## Requirements
 

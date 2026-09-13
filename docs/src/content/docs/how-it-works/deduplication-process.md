@@ -1,4 +1,6 @@
-# Deduplication Process
+---
+title: "Deduplication Process"
+---
 
 This page describes what happens internally when you run `dublette <DIRECTORY>...`.
 
@@ -23,7 +25,7 @@ The resulting file list is sorted alphabetically. This deterministic ordering en
 
 ## Step 3: Hash Files in Parallel
 
-Each file is hashed using the DoubleGradient perceptual hashing algorithm (see [Perceptual Hashing](perceptual-hashing.md)).
+Each file is hashed using the DoubleGradient perceptual hashing algorithm (see [Perceptual Hashing](/how-it-works/perceptual-hashing/)).
 
 Hashing runs in parallel across all available CPU cores using `rayon`. Files that fail to hash (corrupted, unsupported codec) are skipped with a warning.
 
@@ -47,7 +49,7 @@ If ffmpeg is not installed, video processing is skipped entirely with a warning.
 
 ### Audio Fingerprinting (recording match)
 
-Under the default `--audio-match recording`, ffmpeg decodes up to the first 120 seconds of each audio file to mono PCM, which is piped in-process to a Chromaprint-class fingerprinter (see [Acoustic Fingerprinting](acoustic-fingerprinting.md)). The resulting acoustic fingerprint captures what the audio sounds like, independent of codec, bitrate, or tags. Audio tracks embedded in video files are never fingerprinted.
+Under the default `--audio-match recording`, ffmpeg decodes up to the first 120 seconds of each audio file to mono PCM, which is piped in-process to a Chromaprint-class fingerprinter (see [Acoustic Fingerprinting](/how-it-works/acoustic-fingerprinting/)). The resulting acoustic fingerprint captures what the audio sounds like, independent of codec, bitrate, or tags. Audio tracks embedded in video files are never fingerprinted.
 
 If ffmpeg is not installed, the audio pass is skipped with a warning (encoding match still works).
 

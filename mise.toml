@@ -20,6 +20,7 @@ run = "cargo nextest run"
 "cargo:convco" = "0.7.2"
 "aqua:dprint/dprint" = "0.57.4"
 hk = "1.58.1"
+node = "22.22.0"
 pkl = "0.32.1"
 rust = "1.98.1"
 

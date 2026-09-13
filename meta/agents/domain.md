@@ -15,7 +15,12 @@ Single-context. All domain docs live under `meta/`:
     └── agents/              ← per-skill config
 ```
 
-The `docs/` folder at the repo root is reserved for the docsify documentation site — do not place agent or domain files there.
+`docs/` is the Astro Starlight project that builds the published site at
+dublette.espadat.com — a build directory, not a place for agent or domain files.
+Published pages go in `docs/src/content/docs/`; everything unpublished stays in
+`meta/`. The site's shape is decided by ADR-0001 in `espadat-studio/docs-theme`,
+not here: Starlight on a per-tool subdomain, themed by a shared git-pinned
+package, light-only, with the sidebar hand-written so existing URLs survive.
 
 ## Before exploring, read these
 

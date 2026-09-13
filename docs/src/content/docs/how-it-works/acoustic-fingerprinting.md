@@ -1,4 +1,6 @@
-# Acoustic Fingerprinting
+---
+title: "Acoustic Fingerprinting"
+---
 
 ## Why Byte-Level and Perceptual Hashing Both Fail for Audio
 
