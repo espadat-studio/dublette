@@ -1,4 +1,6 @@
-# Perceptual Hashing
+---
+title: "Perceptual Hashing"
+---
 
 ## The Problem with Byte-Level Comparison
 
@@ -6,7 +8,7 @@ Traditional file comparison (checksums like MD5 or SHA-256) produces completely 
 
 Perceptual hashing solves this by generating hashes based on the visual content of an image, not its raw bytes.
 
-This page covers visual content only -- images and the single video frame extracted from each video. Audio files are matched by [Acoustic Fingerprinting](acoustic-fingerprinting.md) instead.
+This page covers visual content only -- images and the single video frame extracted from each video. Audio files are matched by [Acoustic Fingerprinting](/how-it-works/acoustic-fingerprinting/) instead.
 
 ## What Is a Perceptual Hash?
 

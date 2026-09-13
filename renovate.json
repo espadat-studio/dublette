@@ -9,6 +9,12 @@
       "matchDepTypes": ["dependencies"],
       "semanticCommitType": "build",
       "semanticCommitScope": "deps"
+    },
+    {
+      "description": "The docs site is a build directory, not part of the crate. config:recommended types npm `dependencies` updates as fix, and release-plz releases on ^(feat|fix|build) — so a Starlight bump would publish a crates.io version with no code change. Docs dependencies never reach the binary and stay chore.",
+      "matchManagers": ["npm"],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps"
     }
   ]
 }

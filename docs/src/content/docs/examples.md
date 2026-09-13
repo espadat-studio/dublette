@@ -1,4 +1,6 @@
-# Examples
+---
+title: "Examples"
+---
 
 ## Scan Multiple Directories
 
