@@ -1,18 +1,28 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "group:allNonMajor"],
+  "extends": [
+    "config:recommended",
+    "group:allNonMajor",
+    "helpers:pinGitHubActionDigests"
+  ],
   "semanticCommits": "enabled",
   "packageRules": [
     {
       "description": "Cargo dependencies are linked into the released binary, so a bump only reaches users through a release — build is in release_commits. Needed because :semanticPrefixFixDepsChoreOthers types lockfile-only updates as chore, and a patch-level security fix arrives lockfile-only — sibling repo colporteur stranded an ammonia XSS fix on master this way. Tooling, dev-dependencies and actions never reach the artifact and stay chore.",
-      "matchManagers": ["cargo"],
-      "matchDepTypes": ["dependencies"],
+      "matchManagers": [
+        "cargo"
+      ],
+      "matchDepTypes": [
+        "dependencies"
+      ],
       "semanticCommitType": "build",
       "semanticCommitScope": "deps"
     },
     {
       "description": "The docs site is a build directory, not part of the crate. config:recommended types npm `dependencies` updates as fix, and release-plz releases on ^(feat|fix|build) — so a Starlight bump would publish a crates.io version with no code change. Docs dependencies never reach the binary and stay chore.",
-      "matchManagers": ["npm"],
+      "matchManagers": [
+        "npm"
+      ],
       "semanticCommitType": "chore",
       "semanticCommitScope": "deps"
     }
