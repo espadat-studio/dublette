@@ -25,6 +25,29 @@
       ],
       "semanticCommitType": "chore",
       "semanticCommitScope": "deps"
+    },
+    {
+      "description": "The hk binary (mise.toml, native mise manager) and its pkl schema (hk.pkl, the customManager above) are one version in two files. Grouped so a bump cannot land half-applied, which is what left hooks broken when hk 2.0.0 met a 1.x schema.",
+      "matchDepNames": [
+        "hk",
+        "jdx/hk"
+      ],
+      "groupName": "hk"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "hk's pkl schema is pinned by URL inside hk.pkl and no manager parses it. It has to move with the hk binary in mise.toml: hk 2.0.0 cannot evaluate a 1.x schema, and every hook dies with \"listing index amendment requires an Int index\". The amends/import keyword stays inside the match so each replaceString occurs once in the file; autoReplaceGlobalMatch then fixes both versions on the line.",
+      "managerFilePatterns": [
+        "/^hk\\.pkl$/"
+      ],
+      "matchStrings": [
+        "(?:amends|import) \"package://github\\.com/jdx/hk/releases/download/v(?<currentValue>[0-9.]+)/hk@[0-9.]+#"
+      ],
+      "depNameTemplate": "jdx/hk",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.+)$"
     }
   ]
 }
