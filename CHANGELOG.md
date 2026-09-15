@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.4](https://github.com/espadat-studio/dublette/compare/v0.5.3...v0.5.4) - 2026-09-15
+
+### Fixed
+
+- *(hooks)* bump hk pkl schema to 2.0.0
+- *(ci)* stop persisting git credentials in jobs that never push ([#71](https://github.com/espadat-studio/dublette/pull/71))
+
+### Other
+
+- *(deps)* update rust crate clap to v4.6.7 ([#76](https://github.com/espadat-studio/dublette/pull/76))
+- *(renovate)* track hk pkl schema alongside the binary
+- *(deps)* update node.js to v24 ([#75](https://github.com/espadat-studio/dublette/pull/75))
+- *(actions)* comment the auth action pin with its real tag
+- *(deps)* update all non-major dependencies ([#72](https://github.com/espadat-studio/dublette/pull/72))
+- *(deps)* update dependency hk to v2 ([#73](https://github.com/espadat-studio/dublette/pull/73))
+- *(actions)* pin every action to a full commit sha ([#70](https://github.com/espadat-studio/dublette/pull/70))
+- migrate documentation site to astro starlight ([#68](https://github.com/espadat-studio/dublette/pull/68))
+- *(release)* publish to crates.io via trusted publishing ([#66](https://github.com/espadat-studio/dublette/pull/66))
+
 ## [0.5.3](https://github.com/espadat-studio/dublette/compare/v0.5.2...v0.5.3) - 2026-09-11
 
 ### Fixed
