@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.5](https://github.com/espadat-studio/dublette/compare/v0.5.4...v0.5.5) - 2026-09-15
+
+### Added
+
+- *(docs)* serve a robots.txt that names the sitemap ([#79](https://github.com/espadat-studio/dublette/pull/79))
+
+### Other
+
+- *(deps)* update dependency @astrojs/starlight to v0.42.1 ([#78](https://github.com/espadat-studio/dublette/pull/78))
+- *(deps)* update taiki-e/install-action digest to 2ab4414 ([#77](https://github.com/espadat-studio/dublette/pull/77))
+
 ## [0.5.4](https://github.com/espadat-studio/dublette/compare/v0.5.3...v0.5.4) - 2026-09-15
 
 ### Fixed
