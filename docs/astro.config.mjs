@@ -1,10 +1,12 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
+import starlightLlmsTxt from "starlight-llms-txt";
 
 export default defineConfig({
   site: "https://dublette.espadat.com",
   integrations: [
     starlight({
+      plugins: [starlightLlmsTxt()],
       title: "dublette",
       description: "Find the same photo, video or song saved twice in another size, format or bitrate. Compares content, not bytes.",
       logo: { src: "./src/assets/mark.svg", alt: "Espadat" },
