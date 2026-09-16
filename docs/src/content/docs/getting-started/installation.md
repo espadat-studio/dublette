@@ -36,7 +36,7 @@ Without ffmpeg, dublette will skip video files and print a warning.
 
 ## Pre-compiled binaries
 
-Download a binary for your platform from the [latest release](https://github.com/sripwoud/dublette/releases/latest). Binaries are available for Linux (x86_64, aarch64), macOS (Intel, Apple Silicon), and Windows (x64).
+Download a binary for your platform from the [latest release](https://github.com/espadat-studio/dublette/releases/latest). Binaries are available for Linux (x86_64, aarch64), macOS (Intel, Apple Silicon), and Windows (x64).
 
 Extract it somewhere on your `PATH`, e.g. `~/.local/bin`.
 
@@ -51,7 +51,7 @@ This installs the `dublette` binary to `~/.cargo/bin/`. Make sure this directory
 ## Build from Source
 
 ```bash
-git clone https://github.com/sripwoud/dublette.git
+git clone https://github.com/espadat-studio/dublette.git
 cd dublette
 cargo build --release
 ```
