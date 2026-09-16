@@ -139,8 +139,9 @@ pub fn plan(
     if MediaKind::Image.pass_enabled(config.only) {
         let exts: HashSet<&str> = scan::IMAGE_EXTENSIONS.iter().copied().collect();
         let files = scan::collect_files(dirs, &exts)?;
+        let ffmpeg = hash::find_ffmpeg().ok();
         let (hashed, image_skipped) = hash_in_parallel(&files, progress, "Hashing images", |p| {
-            hash::compute_image_hash(p)
+            hash::compute_image_hash(p, ffmpeg.as_deref())
         });
         skipped.extend(image_skipped);
         groups.extend(compare_and_build_groups(
@@ -525,8 +526,8 @@ mod tests {
         write_checkerboard(&a, 8);
         write_checkerboard(&b, 16);
 
-        let h_a = hash::compute_image_hash(&a).unwrap();
-        let h_b = hash::compute_image_hash(&b).unwrap();
+        let h_a = hash::compute_image_hash(&a, None).unwrap();
+        let h_b = hash::compute_image_hash(&b, None).unwrap();
         let distance = h_a.dist(&h_b);
         assert!(distance > 0, "test setup expects non-zero distance");
 
@@ -546,8 +547,8 @@ mod tests {
         write_checkerboard(&a, 8);
         write_checkerboard(&b, 16);
 
-        let h_a = hash::compute_image_hash(&a).unwrap();
-        let h_b = hash::compute_image_hash(&b).unwrap();
+        let h_a = hash::compute_image_hash(&a, None).unwrap();
+        let h_b = hash::compute_image_hash(&b, None).unwrap();
         let distance = h_a.dist(&h_b);
 
         let config = Config {
