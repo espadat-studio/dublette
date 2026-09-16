@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0](https://github.com/espadat-studio/dublette/compare/v0.5.5...v0.6.0) - 2026-09-16
+
+### Fixed
+
+- *(hash)* fall back to ffmpeg for malformed images ([#87](https://github.com/espadat-studio/dublette/pull/87))
+
+### Other
+
+- *(docs)* bump the docs theme to v0.2.0 ([#86](https://github.com/espadat-studio/dublette/pull/86))
+- point stale sripwoud/ links at espadat-studio/ ([#84](https://github.com/espadat-studio/dublette/pull/84))
+- add the espadat mark as favicon and site logo ([#82](https://github.com/espadat-studio/dublette/pull/82))
+- *(deps)* update hk to v2.0.1 ([#81](https://github.com/espadat-studio/dublette/pull/81))
+
 ## [0.5.5](https://github.com/espadat-studio/dublette/compare/v0.5.4...v0.5.5) - 2026-09-15
 
 ### Added
