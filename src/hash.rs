@@ -12,16 +12,25 @@ fn hasher() -> image_hasher::Hasher {
         .to_hasher()
 }
 
-pub fn compute_image_hash(path: &Path) -> Result<ImageHash, SkipError> {
-    let img = image::open(path).map_err(|e| {
-        let reason = if matches!(e, image::ImageError::IoError(_)) {
-            SkipReason::Unreadable
-        } else {
-            SkipReason::DecodeFailed
-        };
-        SkipError::new(reason, format!("failed to open {}: {e}", path.display()))
-    })?;
-    Ok(hasher().hash_image(&img))
+pub fn compute_image_hash(path: &Path, ffmpeg: Option<&Path>) -> Result<ImageHash, SkipError> {
+    let error = match image::open(path) {
+        Ok(img) => return Ok(hasher().hash_image(&img)),
+        Err(error) => error,
+    };
+
+    if let Some(img) = ffmpeg.and_then(|ffmpeg| ffmpeg_decode_image(path, ffmpeg)) {
+        return Ok(hasher().hash_image(&img));
+    }
+
+    let reason = if matches!(error, image::ImageError::IoError(_)) {
+        SkipReason::Unreadable
+    } else {
+        SkipReason::DecodeFailed
+    };
+    Err(SkipError::new(
+        reason,
+        format!("failed to open {}: {error}", path.display()),
+    ))
 }
 
 pub fn find_ffmpeg() -> eyre::Result<PathBuf> {
@@ -45,6 +54,18 @@ fn run_ffmpeg_extract(ffmpeg: &Path, video: &Path, seek: &str, output: &Path) ->
         .status()
         .map(|s| s.success())
         .unwrap_or(false)
+}
+
+fn ffmpeg_decode_image(path: &Path, ffmpeg: &Path) -> Option<image::DynamicImage> {
+    let tmp = tempfile::NamedTempFile::new().ok()?.into_temp_path();
+    let output = tmp.to_path_buf().with_extension("png");
+
+    let decoded = run_ffmpeg_extract(ffmpeg, path, "0", &output)
+        .then(|| image::open(&output).ok())
+        .flatten();
+
+    let _ = std::fs::remove_file(&output);
+    decoded
 }
 
 pub fn extract_video_frame_hash(video: &Path, ffmpeg: &Path) -> Result<ImageHash, SkipError> {
@@ -109,8 +130,8 @@ mod tests {
         create_gradient_image(&a, true);
         create_gradient_image(&b, true);
 
-        let hash_a = compute_image_hash(&a).unwrap();
-        let hash_b = compute_image_hash(&b).unwrap();
+        let hash_a = compute_image_hash(&a, None).unwrap();
+        let hash_b = compute_image_hash(&b, None).unwrap();
         assert_eq!(hash_a.dist(&hash_b), 0);
     }
 
@@ -122,15 +143,40 @@ mod tests {
         create_gradient_image(&a, true);
         create_checkerboard_image(&b, 10);
 
-        let hash_a = compute_image_hash(&a).unwrap();
-        let hash_b = compute_image_hash(&b).unwrap();
+        let hash_a = compute_image_hash(&a, None).unwrap();
+        let hash_b = compute_image_hash(&b, None).unwrap();
         assert!(hash_a.dist(&hash_b) > 0);
     }
 
     #[test]
     fn nonexistent_file_errors() {
-        let result = compute_image_hash(Path::new("/nonexistent.png"));
+        let result = compute_image_hash(Path::new("/nonexistent.png"), None);
         assert!(result.is_err());
+    }
+
+    #[test]
+    fn malformed_jpeg_falls_back_to_ffmpeg() {
+        let Ok(ffmpeg) = find_ffmpeg() else { return };
+
+        let dir = tempfile::tempdir().unwrap();
+        let valid = dir.path().join("valid.jpg");
+        let img: RgbImage = ImageBuffer::from_fn(32, 32, |x, y| Rgb([x as u8 * 8, y as u8 * 8, 0]));
+        img.save(&valid).unwrap();
+
+        let bytes = std::fs::read(&valid).unwrap();
+        let mut malformed = vec![0xFF, 0xD8, 0xFF, 0xD1];
+        malformed.extend_from_slice(&bytes[2..]);
+        let malformed_path = dir.path().join("malformed.jpg");
+        std::fs::write(&malformed_path, malformed).unwrap();
+
+        assert!(
+            compute_image_hash(&malformed_path, None).is_err(),
+            "image crate should reject the malformed JPEG"
+        );
+        assert!(
+            compute_image_hash(&malformed_path, Some(&ffmpeg)).is_ok(),
+            "ffmpeg fallback should recover the malformed JPEG"
+        );
     }
 
     #[test]
