@@ -1,10 +1,11 @@
 ---
 title: "Dublette"
+description: "Find the same photo, video or song saved twice in another size, format or bitrate. Compares content, not bytes."
 ---
 
-Deduplicate images, videos, and audio using perceptual hashing and acoustic fingerprints.
+> Find the same photo, video or song saved twice, even when the files differ.
 
-Dublette scans a directory for similar media files and removes the duplicates. Unlike byte-level comparison, it uses perceptual hashing to detect files that look the same and acoustic fingerprints to detect files that sound the same, even when they differ in format, compression, or metadata.
+Dublette scans a folder for media that looks or sounds the same: a photo saved again at another size, a re-encoded video, one album as both mp3 and flac. Byte-level duplicate finders miss all of these. Dublette compares content instead, with perceptual hashes for images and video and acoustic fingerprints for audio, and keeps one copy per group. Run it with `--dry-run` first to see what it would delete.
 
 ## Key Features
 

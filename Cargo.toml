@@ -4,7 +4,7 @@ version = "0.6.0"
 edition = "2024"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/espadat-studio/dublette"
-description = "Deduplicate images, videos, and audio using perceptual hashing and acoustic fingerprints"
+description = "Find the same photo, video or song saved twice in another size, format or bitrate. Compares content, not bytes."
 
 [dependencies]
 clap = { version = "4", features = ["derive"] }
