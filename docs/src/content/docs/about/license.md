@@ -10,4 +10,4 @@ This means you are free to use, modify, and distribute dublette, provided that:
 - If you run a modified version as a network service, you must make the source code available to users of that service
 - You must include the original copyright and license notice
 
-The full license text is available in the [LICENSE](https://github.com/sripwoud/dublette/blob/master/LICENSE) file in the repository.
+The full license text is available in the [LICENSE](https://github.com/espadat-studio/dublette/blob/master/LICENSE) file in the repository.

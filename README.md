@@ -23,7 +23,7 @@ Dublette scans a directory for similar media files and removes the duplicates. U
 
 ## Quick Start
 
-Install dublette from a [pre-compiled binary](https://github.com/sripwoud/dublette/releases/latest) or via cargo:
+Install dublette from a [pre-compiled binary](https://github.com/espadat-studio/dublette/releases/latest) or via cargo:
 
 ```bash
 cargo install dublette
@@ -57,4 +57,4 @@ Full documentation available at [dublette.espadat.com](https://dublette.espadat.
 ## Community
 
 - [Documentation](https://dublette.espadat.com)
-- [Report Issues](https://github.com/sripwoud/dublette/issues)
+- [Report Issues](https://github.com/espadat-studio/dublette/issues)
