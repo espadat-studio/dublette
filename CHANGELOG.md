@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.1](https://github.com/espadat-studio/dublette/compare/v0.6.0...v0.6.1) - 2026-09-21
+
+### Other
+
+- *(deps)* update all non-major dependencies ([#95](https://github.com/espadat-studio/dublette/pull/95))
+- *(deps)* update taiki-e/install-action digest to e88e69e ([#94](https://github.com/espadat-studio/dublette/pull/94))
+- *(deps)* update release-plz/action digest to b8d6b54 ([#93](https://github.com/espadat-studio/dublette/pull/93))
+- *(deps)* update dependency cargo:cargo-nextest to v0.9.145 ([#92](https://github.com/espadat-studio/dublette/pull/92))
+- *(deps)* update dependency astro to v7.3.3 ([#91](https://github.com/espadat-studio/dublette/pull/91))
+- *(docs)* serve llms.txt so agents can read the docs in one fetch ([#90](https://github.com/espadat-studio/dublette/pull/90))
+- open with the problem the tool solves, not its mechanism ([#89](https://github.com/espadat-studio/dublette/pull/89))
+
 ## [0.6.0](https://github.com/espadat-studio/dublette/compare/v0.5.5...v0.6.0) - 2026-09-16
 
 ### Fixed
