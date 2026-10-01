@@ -22,7 +22,7 @@ run = "cargo nextest run"
 hk = "2.4.0"
 node = "24.21.0"
 pkl = "0.32.1"
-rust = "1.98.1"
+rust = "1.99.0"
 
 [vars]
 dublette = "target/release/dublette"
