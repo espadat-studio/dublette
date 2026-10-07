@@ -36,7 +36,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@89b12181fb390509a0842a86cc55eeb8eb928c1d # stable
       - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - uses: taiki-e/install-action@db63522f73ba296577a3b5f633e260964b497067 # nextest
+      - uses: taiki-e/install-action@bb0282cdd6e41599bc8dfa5fc712ebe9e27cfd8c # nextest
       - run: cargo nextest run
 
   test:
