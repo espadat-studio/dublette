@@ -7,6 +7,53 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.2](https://github.com/espadat-studio/dublette/compare/v0.6.1...v0.6.2) - 2026-10-12
+
+### Other
+
+- *(deps)* update jdx/mise-action digest to 08ae2a0 ([#137](https://github.com/espadat-studio/dublette/pull/137))
+- *(deps)* update hk to v2.6.0 ([#138](https://github.com/espadat-studio/dublette/pull/138))
+- *(deps)* update taiki-e/install-action digest to 2eb6de2 ([#136](https://github.com/espadat-studio/dublette/pull/136))
+- *(deps)* update release-plz/action digest to f393a7b ([#133](https://github.com/espadat-studio/dublette/pull/133))
+- *(deps)* update all non-major dependencies ([#134](https://github.com/espadat-studio/dublette/pull/134))
+- *(deps)* update taiki-e/install-action digest to b1351b8 ([#132](https://github.com/espadat-studio/dublette/pull/132))
+- pass client-id to create-github-app-token ([#131](https://github.com/espadat-studio/dublette/pull/131))
+- *(deps)* update dtolnay/rust-toolchain digest to 686976e ([#129](https://github.com/espadat-studio/dublette/pull/129))
+- *(deps)* update all non-major dependencies ([#128](https://github.com/espadat-studio/dublette/pull/128))
+- *(deps)* update release-plz/action digest to 18641b6 ([#125](https://github.com/espadat-studio/dublette/pull/125))
+- *(deps)* update actions/setup-node digest to 949feb2 ([#127](https://github.com/espadat-studio/dublette/pull/127))
+- *(deps)* update all non-major dependencies ([#126](https://github.com/espadat-studio/dublette/pull/126))
+- *(deps)* bump source-map-js from 1.2.1 to 1.2.2 in /docs in the npm_and_yarn group across 1 directory ([#124](https://github.com/espadat-studio/dublette/pull/124))
+- *(deps)* update dependency astro to v7.3.6 ([#123](https://github.com/espadat-studio/dublette/pull/123))
+- *(deps)* update taiki-e/install-action digest to bb0282c ([#122](https://github.com/espadat-studio/dublette/pull/122))
+- *(deps)* bump http-cache-semantics from 4.2.0 to 4.3.0 in /docs in the npm_and_yarn group across 1 directory ([#121](https://github.com/espadat-studio/dublette/pull/121))
+- *(deps)* update taiki-e/install-action digest to db63522 ([#120](https://github.com/espadat-studio/dublette/pull/120))
+- *(deps)* update jdx/mise-action digest to 2d8d4ca ([#119](https://github.com/espadat-studio/dublette/pull/119))
+- *(deps)* update hk to v2.5.0 ([#118](https://github.com/espadat-studio/dublette/pull/118))
+- *(deps)* update dependency aqua:dprint/dprint to v0.60.1 ([#115](https://github.com/espadat-studio/dublette/pull/115))
+- *(deps)* update jdx/mise-action digest to 94c60b3 ([#117](https://github.com/espadat-studio/dublette/pull/117))
+- *(deps)* update taiki-e/install-action digest to c6be25d ([#116](https://github.com/espadat-studio/dublette/pull/116))
+- *(deps)* bump devalue from 5.9.2 to 5.9.4 in /docs in the npm_and_yarn group across 1 directory ([#114](https://github.com/espadat-studio/dublette/pull/114))
+- *(deps)* update dependency rust to v1.99.0 ([#112](https://github.com/espadat-studio/dublette/pull/112))
+- *(deps)* update dtolnay/rust-toolchain digest to 89b1218 ([#113](https://github.com/espadat-studio/dublette/pull/113))
+- *(deps)* update jdx/mise-action digest to 7a4e45a ([#110](https://github.com/espadat-studio/dublette/pull/110))
+- *(deps)* update dependency @astrojs/starlight to v0.42.5 ([#111](https://github.com/espadat-studio/dublette/pull/111))
+- *(deps)* update dependency aqua:dprint/dprint to v0.58.0 ([#109](https://github.com/espadat-studio/dublette/pull/109))
+- *(deps)* update taiki-e/install-action digest to badb8c3 ([#108](https://github.com/espadat-studio/dublette/pull/108))
+- *(deps)* update jdx/mise-action action to v5 ([#107](https://github.com/espadat-studio/dublette/pull/107))
+- *(deps)* update hk to v2.4.0 ([#106](https://github.com/espadat-studio/dublette/pull/106))
+- *(deps)* update taiki-e/install-action digest to 23d41aa ([#105](https://github.com/espadat-studio/dublette/pull/105))
+- *(docs)* bump the docs theme to v0.4.0
+- *(deps)* update hk to v2.2.0 ([#104](https://github.com/espadat-studio/dublette/pull/104))
+- *(deps)* update taiki-e/install-action digest to 45fceba ([#102](https://github.com/espadat-studio/dublette/pull/102))
+- *(deps)* update all non-major dependencies ([#103](https://github.com/espadat-studio/dublette/pull/103))
+- *(deps)* update hk to v2.1.0 ([#101](https://github.com/espadat-studio/dublette/pull/101))
+- *(deps)* update taiki-e/install-action digest to 4765db2 ([#100](https://github.com/espadat-studio/dublette/pull/100))
+- *(deps)* update taiki-e/install-action digest to cae505d ([#98](https://github.com/espadat-studio/dublette/pull/98))
+- *(deps)* update all non-major dependencies ([#99](https://github.com/espadat-studio/dublette/pull/99))
+- *(deps)* repoint @espadat/docs-theme after history rewrite
+- *(deps)* update dependency cargo:cargo-nextest to v0.9.146 ([#97](https://github.com/espadat-studio/dublette/pull/97))
+
 ## [0.6.1](https://github.com/espadat-studio/dublette/compare/v0.6.0...v0.6.1) - 2026-09-21
 
 ### Other
