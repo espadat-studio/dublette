@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.3](https://github.com/espadat-studio/dublette/compare/v0.6.2...v0.6.3) - 2026-10-26
+
+### Other
+
+- *(deps)* update hk to v2.8.1 ([#154](https://github.com/espadat-studio/dublette/pull/154))
+- *(deps)* update all dependencies ([#153](https://github.com/espadat-studio/dublette/pull/153))
+- *(renovate)* batch all updates into one weekly pr ([#152](https://github.com/espadat-studio/dublette/pull/152))
+- *(deps)* update release-plz/action digest to 6caa8d3 ([#151](https://github.com/espadat-studio/dublette/pull/151))
+- *(deps)* update jdx/mise-action digest to fc42bcc ([#148](https://github.com/espadat-studio/dublette/pull/148))
+- *(deps)* update dependency astro to v7.4.1 ([#150](https://github.com/espadat-studio/dublette/pull/150))
+- *(deps)* update hk to v2.7.1 ([#149](https://github.com/espadat-studio/dublette/pull/149))
+- *(deps)* update hk to v2.7.0 ([#145](https://github.com/espadat-studio/dublette/pull/145))
+- *(deps)* update dependency aqua:dprint/dprint to v0.64.0 ([#147](https://github.com/espadat-studio/dublette/pull/147))
+- *(deps)* update taiki-e/install-action digest to 9252097 ([#146](https://github.com/espadat-studio/dublette/pull/146))
+- *(deps)* update jdx/mise-action digest to 9b200bc ([#144](https://github.com/espadat-studio/dublette/pull/144))
+- *(deps)* update dtolnay/rust-toolchain digest to b725eda ([#143](https://github.com/espadat-studio/dublette/pull/143))
+- *(deps)* update all non-major dependencies ([#142](https://github.com/espadat-studio/dublette/pull/142))
+- *(deps)* update node.js to v24.22.0 ([#141](https://github.com/espadat-studio/dublette/pull/141))
+- *(deps)* update actions/create-github-app-token digest to 64ab729 ([#139](https://github.com/espadat-studio/dublette/pull/139))
+- *(deps)* update release-plz/action digest to 8921286 ([#140](https://github.com/espadat-studio/dublette/pull/140))
+
 ## [0.6.2](https://github.com/espadat-studio/dublette/compare/v0.6.1...v0.6.2) - 2026-10-12
 
 ### Other
