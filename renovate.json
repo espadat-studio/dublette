@@ -2,38 +2,31 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    "group:all",
     "schedule:weekly",
     "helpers:pinGitHubActionDigests"
   ],
   "semanticCommits": "enabled",
   "packageRules": [
     {
-      "description": "Cargo dependencies are linked into the released binary, so a bump only reaches users through a release — build is in release_commits. Needed because :semanticPrefixFixDepsChoreOthers types lockfile-only updates as chore, and a patch-level security fix arrives lockfile-only — sibling repo colporteur stranded an ammonia XSS fix on master this way. Tooling, dev-dependencies and actions never reach the artifact and stay chore.",
+      "description": "Everything that never reaches the release: dev-dependencies, the docs site, GitHub Actions, mise tools and hk with its pkl schema (one version in two files, so one PR keeps them from landing half-applied). One weekly PR typed chore, which the release tool ignores, so merging it cuts no release.",
+      "matchPackageNames": [
+        "*"
+      ],
+      "groupName": "tooling dependencies",
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps"
+    },
+    {
+      "description": "Cargo dependencies are linked into the released binary, so a bump only reaches users through a release: build is in release_commits. Own weekly PR, so a tooling bump never rides along and a runtime bump never gets typed chore. Needed because :semanticPrefixFixDepsChoreOthers types lockfile-only updates as chore, and a patch-level security fix arrives lockfile-only.",
       "matchManagers": [
         "cargo"
       ],
       "matchDepTypes": [
         "dependencies"
       ],
+      "groupName": "runtime dependencies",
       "semanticCommitType": "build",
       "semanticCommitScope": "deps"
-    },
-    {
-      "description": "The docs site is a build directory, not part of the crate. config:recommended types npm `dependencies` updates as fix, and release-plz releases on ^(feat|fix|build) — so a Starlight bump would publish a crates.io version with no code change. Docs dependencies never reach the binary and stay chore.",
-      "matchManagers": [
-        "npm"
-      ],
-      "semanticCommitType": "chore",
-      "semanticCommitScope": "deps"
-    },
-    {
-      "description": "The hk binary (mise.toml, native mise manager) and its pkl schema (hk.pkl, the customManager above) are one version in two files. Grouped so a bump cannot land half-applied, which is what left hooks broken when hk 2.0.0 met a 1.x schema.",
-      "matchDepNames": [
-        "hk",
-        "jdx/hk"
-      ],
-      "groupName": "hk"
     }
   ],
   "customManagers": [
