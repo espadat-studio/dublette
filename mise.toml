@@ -16,12 +16,12 @@ alias = "t"
 run = "cargo nextest run"
 
 [tools]
-"cargo:cargo-nextest" = "0.9.150"
+"cargo:cargo-nextest" = "0.9.151"
 "cargo:convco" = "0.7.2"
 "aqua:dprint/dprint" = "0.64.3"
-hk = "2.11.0"
+hk = "2.11.1"
 node = "26.13.0"
-pkl = "0.32.2"
+pkl = "0.33.0"
 rust = "1.99.1"
 
 [vars]
