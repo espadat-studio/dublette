@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.4](https://github.com/espadat-studio/dublette/compare/v0.6.3...v0.6.4) - 2026-11-23
+
+### Other
+
+- *(deps)* update tooling dependencies ([#163](https://github.com/espadat-studio/dublette/pull/163))
+- *(deps)* update runtime dependencies ([#162](https://github.com/espadat-studio/dublette/pull/162))
+- *(deps)* update tooling dependencies ([#161](https://github.com/espadat-studio/dublette/pull/161))
+- *(renovate)* split runtime and tooling dependency prs ([#160](https://github.com/espadat-studio/dublette/pull/160))
+- *(deps)* bump undici from 8.10.2 to 8.12.3 in /docs in the npm_and_yarn group across 1 directory ([#159](https://github.com/espadat-studio/dublette/pull/159))
+- *(deps)* update all dependencies ([#158](https://github.com/espadat-studio/dublette/pull/158))
+- *(deps)* update hk to v2.11.0 ([#157](https://github.com/espadat-studio/dublette/pull/157))
+- *(deps)* bump the npm_and_yarn group across 1 directory with 2 updates ([#156](https://github.com/espadat-studio/dublette/pull/156))
+
 ## [0.6.3](https://github.com/espadat-studio/dublette/compare/v0.6.2...v0.6.3) - 2026-10-26
 
 ### Other
